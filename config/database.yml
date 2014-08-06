@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: librarian_development
+  pool: 5
+  username: rui
+  password: rui
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: librarian_test
+  pool: 5
+  username: rui
+  password: rui
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: librarian_production
+  pool: 5
+  username: rui
+  password: rui

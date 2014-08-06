@@ -15,5 +15,3 @@
 /log/*.log
 /tmp
 
-# Ignore DB
-/config/database.yml
