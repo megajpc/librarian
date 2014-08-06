@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Title,:
+  = @book.title
+p
+  strong Author,:
+  = @book.author
+p
+  strong Isbn,:
+  = @book.isbn
+p
+  strong Language,:
+  = @book.language
+p
+  strong Translator,:
+  = @book.translator
+p
+  strong Cover,:
+  = @book.cover
+p
+  strong Edition:
+  = @book.edition
+p
+  strong Year:
+  = @book.year
+
+= link_to 'Edit', edit_book_path(@book)
+'|
+= link_to 'Back', books_path
