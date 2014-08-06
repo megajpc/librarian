@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :authors
+=======
   resources :books
+>>>>>>> 190a4f16b28470eac9d9a97c7e53aa7aac8a7911
+
   devise_for :users
   devise_for :admins
   # The priority is based upon order of creation: first created -> highest priority.
