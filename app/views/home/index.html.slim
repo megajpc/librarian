@@ -1,5 +1,7 @@
 - if admin_signed_in?
-  h3 you have succesfully signed in
+  h3 Opções
+  = link_to "New book", new_book_path, method: :get
+  br
   = link_to "Sign Out", destroy_admin_session_path, method: :delete
 - else
   h1 welcome to rails community
