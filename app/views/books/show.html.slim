@@ -5,7 +5,8 @@ p
   = @book.title
 p
   strong Author:
-  = @book.author
+  - unless @book.author.nil?
+      = @book.author.art_name
 p
   strong Isbn:
   = @book.isbn

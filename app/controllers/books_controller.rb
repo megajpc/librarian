@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.all.includes :author
   end
 
   # GET /books/1
@@ -15,15 +15,18 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @authors = Author.order(:name)
   end
 
   # GET /books/1/edit
   def edit
+    @authors = Author.order(:name)
   end
 
   # POST /books
   # POST /books.json
   def create
+    @authors = Author.order(:name)
     @book = Book.new(book_params)
 
     respond_to do |format|
@@ -69,6 +72,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :isbn, :language, :translator, :cover, :edition, :year)
+      params.require(:book).permit(:title, :author_id, :isbn, :language, :translator, :cover, :edition, :year)
     end
 end

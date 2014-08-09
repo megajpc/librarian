@@ -37,14 +37,14 @@ ActiveRecord::Schema.define(version: 20140806094051) do
   create_table "authors", force: true do |t|
     t.string   "name"
     t.string   "art_name"
-    t.string   "dob"
+    t.date     "dob"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "books", force: true do |t|
+    t.integer  "author_id"
     t.string   "title"
-    t.string   "author"
     t.string   "isbn"
     t.string   "language"
     t.string   "translator"

@@ -11,7 +11,8 @@
     = f.text_field :title
   .field
     = f.label :author
-    = f.text_field :author
+    /= f.text_field :author
+    = f.collection_select :author_id, @authors, :id, :name, include_blank: true
   .field
     = f.label :isbn
     = f.text_field :isbn
