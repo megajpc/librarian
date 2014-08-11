@@ -29,11 +29,13 @@
             td = book.cover
             td = book.edition
             td = book.year
-            td = link_to 'Show', book
+            td = link_to 'Show', book, class: "button", id: "book-show-button"
             td = link_to 'Edit', edit_book_path(book)
             td = link_to 'Destroy', book, method: :delete, data: {:confirm => 'Are you sure?'}
 
   br
+
+  == render 'authors/list'
   h3 Opções
   = link_to "New author", new_author_path, method: :get
   br

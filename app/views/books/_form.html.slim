@@ -11,8 +11,8 @@
     = f.text_field :title
   .field
     = f.label :author
-    /= f.text_field :author
     = f.collection_select :author_id, @authors, :id, :name, include_blank: true
+    = link_to "New author?", new_author_path(:from_books), method: :get
   .field
     = f.label :isbn
     = f.text_field :isbn
