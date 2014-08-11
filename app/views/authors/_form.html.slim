@@ -15,4 +15,5 @@
   .field
     = f.label :dob
     = f.text_field :dob
+    = f.hidden_field :from_books, value: request['format'] == "from_books"
   .actions = f.submit 'Save'

@@ -1,35 +1,49 @@
-h1 Listing books
+- if admin_signed_in?
+  - unless @books.empty?
+    h1 Listing books
 
-table
-  thead
-    tr
-      th Title
-      th Author
-      th Isbn
-      th Language
-      th Translator
-      th Cover
-      th Edition
-      th Year
-      th
-      th
-      th
+    table
+      thead
+        tr
+          th Title
+          th Author
+          th Isbn
+          th Language
+          th Translator
+          th Cover
+          th Edition
+          th Year
+          th
+          th
+          th
 
-  tbody
-    - @books.each do |book|
-      tr
-        td = book.title
-        td = book.author
-        td = book.isbn
-        td = book.language
-        td = book.translator
-        td = book.cover
-        td = book.edition
-        td = book.year
-        td = link_to 'Show', book
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @books.each do |book|
+          tr
+            td = book.title
+            - unless book.author.nil?
+              td = book.author.art_name
+            td = book.isbn
+            td = book.language
+            td = book.translator
+            td = book.cover
+            td = book.edition
+            td = book.year
+            td = link_to 'Show', book, class: "button", id: "book-show-button"
+            td = link_to 'Edit', edit_book_path(book)
+            td = link_to 'Destroy', book, method: :delete, data: {:confirm => 'Are you sure?'}
 
-br
+  br
 
-= link_to 'New Book', new_book_path
+  == render 'authors/list'
+  h3 Opções
+  = link_to "New author", new_author_path, method: :get
+  br
+  = link_to "New book", new_book_path, method: :get
+  br
+  = link_to "Sign Out", destroy_admin_session_path, method: :delete
+- else
+  h1 Início
+  = link_to "Sign In", new_admin_session_path, method: :get
+  br
+  = link_to "Sign up", new_admin_registration_path, method: :get

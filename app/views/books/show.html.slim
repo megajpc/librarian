@@ -1,22 +1,23 @@
 p#notice = notice
 
 p
-  strong Title,:
+  strong Title:
   = @book.title
 p
-  strong Author,:
-  = @book.author
+  strong Author:
+  - unless @book.author.nil?
+      = @book.author.art_name
 p
-  strong Isbn,:
+  strong Isbn:
   = @book.isbn
 p
-  strong Language,:
+  strong Language:
   = @book.language
 p
-  strong Translator,:
+  strong Translator:
   = @book.translator
 p
-  strong Cover,:
+  strong Cover:
   = @book.cover
 p
   strong Edition:

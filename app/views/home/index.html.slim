@@ -1,0 +1,10 @@
+- if admin_signed_in?
+  h3 Opções
+  = link_to "New book", new_book_path, method: :get
+  br
+  = link_to "Sign Out", destroy_admin_session_path, method: :delete
+- else
+  h1 Início
+  = link_to "Sign In", new_admin_session_path, method: :get
+  br
+  = link_to "Sign up", new_admin_registration_path, method: :get

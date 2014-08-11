@@ -1,0 +1,17 @@
+h2 Sign up
+= form_tag(admin_registration_path,:method => 'post')
+= devise_error_messages!
+table
+  tr
+    td Email :
+    td= email_field_tag "admin[email]",@admin.email
+  tr
+    td Password :
+    td= password_field_tag "admin[password]",@admin.password
+  tr
+    td Retype password :
+    td= password_field_tag "admin[password_confirmation]",@admin.password_confirmation
+  tr
+    td= submit_tag nil, :class => "form_submit"
+br/
+= render :partial => "devise/shared/links"

@@ -28,8 +28,12 @@ class AuthorsController < ApplicationController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
-        format.json { render :show, status: :created, location: @author }
+        if request['author']['from_books'] == "true"
+          format.html { redirect_to new_book_path}
+        else
+          format.html { redirect_to @author, notice: 'Author was successfully created.' }
+          format.json { render :show, status: :created, location: @author }
+        end
       else
         format.html { render :new }
         format.json { render json: @author.errors, status: :unprocessable_entity }
@@ -56,7 +60,7 @@ class AuthorsController < ApplicationController
   def destroy
     @author.destroy
     respond_to do |format|
-      format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
+      format.html { redirect_to books_url, notice: 'Author was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
