@@ -38,6 +38,7 @@ GEM
     bullet (4.6.0)
       uniform_notifier
     callsite (0.0.11)
+    cancancan (1.9.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -160,6 +161,7 @@ DEPENDENCIES
   better_errors (~> 1.0.1)
   binding_of_caller (~> 0.7.2)
   bullet (~> 4.6.0)
+  cancancan (~> 1.9.2)
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
   foundation-rails (~> 5.3.3.0)
