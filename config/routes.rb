@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   #root 'home#index'
   root 'books#index'
-
-  namespace :admin do
-    get '/', to: 'home#dashboard'
-  end
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
