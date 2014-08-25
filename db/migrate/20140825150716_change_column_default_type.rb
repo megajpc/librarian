@@ -1,5 +1,5 @@
 class ChangeColumnDefaultType < ActiveRecord::Migration
   def change
-  	add_column :users, :role, :string, :default => "registered"
+  	add_column :users, :role, :string, :default => "user"
   end
 end
