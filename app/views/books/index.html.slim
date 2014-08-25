@@ -1,4 +1,4 @@
-- if admin_signed_in?
+- if user_signed_in?
   - unless @books.empty?
 
     == render 'books/list'
@@ -12,11 +12,11 @@
   br
   = link_to "New book", new_book_path, method: :get
   br
-  = link_to "Sign Out", destroy_admin_session_path, method: :delete
+  = link_to "Sign Out", destroy_user_session_path, method: :delete
 - else
   h1 Início
-  = link_to "Sign In", new_admin_session_path, method: :get
+  = link_to "Sign In", new_user_session_path, method: :get
   br
-  = link_to "Sign up", new_admin_registration_path, method: :get
+  = link_to "Sign up", new_user_registration_path, method: :get
   br
   == render 'books/list'
