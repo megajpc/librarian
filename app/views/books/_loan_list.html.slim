@@ -1,0 +1,14 @@
+table
+  thead
+    tr
+      th Title
+      th Author
+      th Loan
+
+  tbody
+    - @books.each do |book|
+      tr
+        td = book.title
+        - unless book.author.nil?
+          td = book.author.art_name
+        td = book.loan

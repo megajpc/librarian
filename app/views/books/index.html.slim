@@ -1,13 +1,12 @@
 - if user_signed_in?
   -if current_user.admin?
     - unless @books.empty?
-
-    == render 'books/list'
-
+    == render 'books/admin_list'
     br
-
     == render 'authors/list'
-
+    br
+    == render 'books/loan_list'
+    br
     h3 Opções
     = link_to "New author", new_author_path, method: :get
     br
@@ -16,9 +15,7 @@
     = link_to "Sign Out", destroy_user_session_path, method: :delete
   -else
     - unless @books.empty?
-
-    == render 'books/list'
-
+    == render 'books/user_list'
     br
     = link_to "Sign Out", destroy_user_session_path, method: :delete
 - else
@@ -27,4 +24,4 @@
   br
   = link_to "Sign up", new_user_registration_path, method: :get
   br
-  == render 'books/list'
+  == render 'books/user_list'
