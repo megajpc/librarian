@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :authors
-  resources :books
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,6 +7,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'home#index'
+  resources :books do
+    resources :loans
+  end
+  
   root 'books#index'
   
   # Example of regular route:

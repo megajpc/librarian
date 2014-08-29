@@ -1,0 +1,17 @@
+table
+  thead
+    tr
+      th Title
+      th Author
+      th Date
+      th Loan
+      th Status
+
+  tbody
+    - Loan.all.each do |loan|
+      tr
+        td
+        td
+        td = loan.date
+        td = loan.loan
+        td = loan.status

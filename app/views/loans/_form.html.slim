@@ -1,0 +1,29 @@
+= form_for :loan do |f|
+  - if @loan.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@loan.errors.count, "error")} prohibited this loan from being saved:"
+      ul
+        - @loan.errors.full_messages.each do |message|
+          li = message
+
+  / .field
+  /   = f.label :title
+  /   = f.text_field :title
+  / .field
+  /   = f.label :author
+  /   = f.text_field :author
+  / .field
+  /   = f.label :date
+  /   = f.date_select :date
+  / .field
+  /   = f.label :loan
+  /   = f.text_field :loan
+  / .actions 
+
+  - book =  Book.find(params["book_id"])
+  - author = Author.find(book.author_id)
+
+  h3 = book.title
+  h4 = author.name
+
+  .actions = f.submit 'Save'

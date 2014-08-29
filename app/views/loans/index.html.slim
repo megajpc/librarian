@@ -1,0 +1,29 @@
+h1 Listing loans
+
+table
+  thead
+    tr
+      th Title
+      th Author
+      th Date
+      th Loan
+      th Status
+      th
+      th
+      th
+
+  tbody
+    - @loans.each do |loan|
+      tr
+        td
+        td
+        td = loan.date
+        td = loan.loan
+        td = loan.status
+        td = link_to 'Show', loan
+        td = link_to 'Edit', edit_loan_path(loan)
+        td = link_to 'Destroy', loan, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Loan', new_book_loan_path

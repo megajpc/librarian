@@ -8,3 +8,5 @@
 
 admin = User.new email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: 'admin'
 admin.save!
+user = User.new email: 'user@example.com', password: 'password', password_confirmation: 'password', role: 'user'
+user.save!

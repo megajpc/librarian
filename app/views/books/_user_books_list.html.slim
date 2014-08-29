@@ -10,8 +10,6 @@ table
       th Edition
       th Year
       th
-      th
-      th
 
   tbody
     - @books.each do |book|
@@ -25,6 +23,4 @@ table
         td = book.cover
         td = book.edition
         td = book.year
-        td = link_to 'Show', book, class: "button", id: "book-show-button"
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, method: :delete, data: {:confirm => 'Are you sure?'}
+        td = link_to 'Loan', new_book_loan_path(book)
